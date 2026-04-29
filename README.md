@@ -20,19 +20,17 @@ Use this exact URL in the Zoom Marketplace developer console:
 https://scribioio.github.io/zoom/oauth-callback
 ```
 
-## ⚠️ Apple Team ID placeholder
+## Apple Team ID
 
-The AASA file currently uses the literal `TEAMID` as a placeholder.
-Replace it with the actual 10-character Apple Developer Team ID
-before shipping. Find your Team ID via:
+The AASA file is configured for Apple Team ID **`X7HCF4WY12`** (Giovanni Sacco's free Personal Team) paired with the `app.scribio` bundle ID. This Team ID was extracted from Xcode's "Manage Certificates…" dialog where it appears as `LT-X7HCF4WY12` (the `LT-` prefix denotes a Local Tester / Personal Team certificate).
+
+If the Apple Developer team changes (e.g., enrolling in the paid Apple Developer Program with a different team, or Scribio joining an existing organisation team), update both occurrences of `X7HCF4WY12` in `.well-known/apple-app-site-association` and push. Apple's CDN cache takes 24–48 h to refresh after AASA changes.
+
+Read the current Team ID at any time via:
 
 ```bash
-# After building Scribio in Xcode:
 codesign -dvv /path/to/Scribio.app 2>&1 | grep "TeamIdentifier"
-# Or from your Apple Developer account: https://developer.apple.com/account
 ```
-
-Then replace both occurrences in `.well-known/apple-app-site-association`.
 
 ## Deploying
 
