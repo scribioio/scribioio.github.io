@@ -1,0 +1,18 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["TEAMID.app.scribio"],
+        "components": [
+          {
+            "/": "/zoom/oauth-callback*",
+            "comment": "Zoom Marketplace OAuth redirect — Scribio intercepts via Universal Link before browser navigates"
+          }
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": ["TEAMID.app.scribio"]
+  }
+}
