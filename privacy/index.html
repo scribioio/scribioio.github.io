@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — Scribio</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    }
+    body {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 6rem;
+      line-height: 1.65;
+    }
+    h1 { margin-bottom: 0.25rem; }
+    h2 { margin-top: 2.5rem; }
+    h3 { margin-top: 1.5rem; }
+    .meta { color: #888; margin-top: 0; font-size: 0.9em; }
+    code {
+      background: rgba(127,127,127,0.15);
+      padding: 0.1em 0.4em;
+      border-radius: 4px;
+      font-size: 0.95em;
+    }
+    nav { font-size: 0.9em; margin-bottom: 2rem; }
+    nav a { margin-right: 1rem; }
+    .footer { margin-top: 4rem; color: #888; font-size: 0.85em; }
+    table { border-collapse: collapse; margin: 1rem 0; }
+    th, td { padding: 0.4em 0.8em; border: 1px solid rgba(127,127,127,0.3); text-align: left; vertical-align: top; }
+  </style>
+</head>
+<body>
+  <nav><a href="/">← Scribio</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></nav>
+
+  <h1>Privacy Policy</h1>
+  <p class="meta">Last updated: 2026-04-29 · Effective: 2026-04-29</p>
+
+  <h2>The short version</h2>
+  <p>
+    Scribio is a <strong>local-first</strong> macOS app. Your meeting audio, transcripts,
+    voice profile, and face embeddings are processed and stored <strong>entirely on your Mac</strong>.
+    Nothing audio-related is ever transmitted off your device. The only data that may
+    leave your Mac is (a) optional encrypted sync to your own iCloud account between
+    your own devices, and (b) participant identity metadata fetched from Zoom or
+    Microsoft 365 if you explicitly opt in to those integrations.
+  </p>
+
+  <h2>1. What Scribio collects and stores on your device</h2>
+  <table>
+    <thead><tr><th>Data</th><th>Where it lives</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>Meeting audio recordings</td><td>Local disk (sandboxed app container)</td><td>Source for transcription</td></tr>
+      <tr><td>Transcripts (text + speaker labels + timestamps)</td><td>Local SQLite database (GRDB)</td><td>The product</td></tr>
+      <tr><td>Voice profile embeddings (256-dim vectors)</td><td>Local database, encrypted at rest with keys in macOS Keychain (Secure Enclave)</td><td>Speaker identification across meetings</td></tr>
+      <tr><td>Face embeddings (512-dim vectors from camera frames)</td><td>Local database, AES-GCM encrypted at rest, key in Secure Enclave. <strong>Raw video frames are discarded immediately</strong> after embedding extraction.</td><td>Speaker identification when a camera is on</td></tr>
+      <tr><td>Calendar attendee names + emails</td><td>Local database</td><td>Speaker name suggestions for calendar-linked meetings (read via the macOS Calendar permission)</td></tr>
+      <tr><td>Contact identifiers</td><td>Local database (only the <code>CNContact.identifier</code> reference, never the name/email/phone/photo)</td><td>iOS-only feature for matching meeting participants to your contacts (deferred from v1)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>2. What leaves your device — and only with your explicit consent</h2>
+
+  <h3>2.1 iCloud sync between your own devices (optional)</h3>
+  <p>
+    If you have iCloud enabled on your Mac, Scribio uses Apple's CloudKit service
+    to sync transcripts, summaries, tasks, and meeting metadata between
+    <em>your own</em> Macs and (in a future iOS phase) your iPhones / iPads. This
+    sync is end-to-end encrypted by Apple, runs only between your own
+    Apple-ID-linked devices, and never reaches Scribio's servers (we don't have any).
+    <strong>Face embeddings are never synced</strong> — biometric data stays
+    device-local.
+  </p>
+
+  <h3>2.2 Zoom Marketplace integration (opt-in)</h3>
+  <p>
+    If you connect Scribio to your Zoom account, Scribio fetches the
+    post-meeting participant roster (display name, email, role) from
+    <code>GET /past_meetings/{meetingID}/participants</code> via Zoom's REST API.
+    The audio of the meeting is <strong>never</strong> sent to Zoom. We send Zoom only
+    the meeting ID, our OAuth credential, and request the roster. Zoom's privacy
+    policy applies to that exchange:
+    <a href="https://zoom.us/privacy">https://zoom.us/privacy</a>.
+  </p>
+
+  <h3>2.3 Microsoft Graph integration (opt-in, future phase)</h3>
+  <p>
+    Same shape as the Zoom integration but for Microsoft Teams: post-meeting
+    attendance reports are fetched via
+    <code>GET /v1.0/users/{userID}/onlineMeetings/{meetingID}/attendanceReports/{reportID}</code>.
+    Audio never leaves your device. Microsoft's privacy terms apply to the metadata
+    exchange: <a href="https://privacy.microsoft.com/">https://privacy.microsoft.com/</a>.
+  </p>
+
+  <h3>2.4 External AI services (opt-in, future phase)</h3>
+  <p>
+    Scribio runs all language-model inference on-device by default
+    (MLX-Swift, Apple Silicon ANE/GPU). If you opt into an external AI service
+    (e.g. Anthropic Claude, OpenAI), only the prompt content you choose to send
+    is transmitted, and only to the service you authorise. The default setting
+    keeps everything on-device.
+  </p>
+
+  <h3>2.5 Crash and error reporting (opt-in)</h3>
+  <p>
+    If you opt into crash reporting, Scribio transmits scrubbed crash logs over
+    HTTPS. Logs are stripped of transcript text, speaker names, audio file paths,
+    and other PII before transmission. Default: off.
+  </p>
+
+  <h2>3. What Scribio explicitly does NOT do</h2>
+  <ul>
+    <li>Scribio does not run a server or cloud backend that ingests your data.</li>
+    <li>Scribio does not transmit audio, transcripts, voice profiles, or face embeddings to any third party.</li>
+    <li>Scribio does not include analytics or tracking SDKs (no Google Analytics, no Mixpanel, no Crashlytics-by-default, no advertising IDs).</li>
+    <li>Scribio does not sell, rent, or share your data with anyone for any purpose.</li>
+  </ul>
+
+  <h2>4. Biometric data (GDPR Article 9, CCPA §1798.140)</h2>
+  <p>
+    Voice and face embeddings are <em>special categories of personal data</em>
+    under EU/UK GDPR and "biometric information" under California CCPA.
+    Scribio handles them as follows:
+  </p>
+  <ul>
+    <li><strong>Explicit informed consent</strong> screen before any face processing begins, separate from general onboarding.</li>
+    <li><strong>Encrypted at rest</strong> via Apple CryptoKit (AES-GCM) with keys in the Secure Enclave (<code>kSecAttrAccessibleWhenUnlockedThisDeviceOnly</code>).</li>
+    <li><strong>Raw frames discarded</strong> immediately after embedding extraction — never persisted.</li>
+    <li><strong>Never transmitted</strong> off your device under any circumstance.</li>
+    <li><strong>One-tap deletion</strong> via Settings → Privacy → Biometric Data → Delete All — wipes every embedding, encryption key, and audit log entry.</li>
+    <li><strong>Audit trail</strong> in the local <code>biometric_consent_log</code> table for GDPR records-of-processing-activity compliance.</li>
+  </ul>
+
+  <h2>5. Your rights</h2>
+  <p>
+    Because Scribio stores your data on your own device, most data-subject rights
+    (access, rectification, deletion, portability) are exercised directly through
+    the Scribio app:
+  </p>
+  <ul>
+    <li><strong>Access / portability</strong>: Settings → Export → choose Markdown / Obsidian / Notion / Bear / Roam / Logseq / Apple Notes / Evernote.</li>
+    <li><strong>Deletion</strong>: per-meeting delete (with confirmation) from the meetings list, plus Settings → Privacy → "Delete all data" for full wipe.</li>
+    <li><strong>Rectification</strong>: any speaker name, transcript word, or summary can be edited inline in the app.</li>
+    <li><strong>Withdrawal of consent</strong>: any opt-in (Zoom, Graph, external AI, crash reporting, biometric processing) can be turned off in Settings at any time.</li>
+  </ul>
+  <p>
+    For questions about your data or to request deletion of any data we may have
+    received via crash reporting (if you opted in), email
+    <a href="mailto:sacco66@gmail.com">sacco66@gmail.com</a>.
+  </p>
+
+  <h2>6. Children</h2>
+  <p>
+    Scribio is not directed to children under 13 (US) or 16 (EU/UK). We do not
+    knowingly process personal data of children. If you believe a child has
+    provided personal information to Scribio, contact us and we will assist with
+    deletion.
+  </p>
+
+  <h2>7. Changes to this policy</h2>
+  <p>
+    Material changes to this policy will be reflected in the "Last updated" date
+    at the top and announced in the Scribio app's release notes. Continued use of
+    Scribio after the effective date of a change constitutes acceptance.
+  </p>
+
+  <h2>8. Contact</h2>
+  <p>
+    Giovanni Sacco · Scribio · <a href="mailto:sacco66@gmail.com">sacco66@gmail.com</a>
+  </p>
+
+  <p class="footer">
+    This privacy policy is provided as a baseline reference. For commercial
+    deployment in regulated jurisdictions, consult qualified legal counsel —
+    Scribio's developer is not a lawyer and this document is not legal advice.
+  </p>
+</body>
+</html>
