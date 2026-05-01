@@ -1,0 +1,13 @@
+# Cloudflare Pages headers configuration
+# https://developers.cloudflare.com/pages/configuration/headers/
+#
+# This file is read by Cloudflare Pages at deploy time. GitHub Pages
+# IGNORES this file (no equivalent feature), so the same repo can
+# continue to serve from both origins during the migration grace
+# period — Cloudflare Pages applies the fix; GitHub Pages keeps its
+# legacy `application/octet-stream` AASA response. Apple's AASA parser
+# accepts both, but the JSON Content-Type is the spec-correct value
+# and avoids any future tightening of Apple's CDN ingestion rules.
+
+/.well-known/apple-app-site-association
+  Content-Type: application/json
