@@ -2,7 +2,7 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["X7HCF4WY12.app.scribio"],
+        "appIDs": ["SAFFCT6GS7.app.scribio"],
         "components": [
           {
             "/": "/zoom/oauth-callback*",
@@ -13,6 +13,6 @@
     ]
   },
   "webcredentials": {
-    "apps": ["X7HCF4WY12.app.scribio"]
+    "apps": ["SAFFCT6GS7.app.scribio"]
   }
 }

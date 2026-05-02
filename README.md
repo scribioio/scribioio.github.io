@@ -22,9 +22,11 @@ https://scribioio.github.io/zoom/oauth-callback
 
 ## Apple Team ID
 
-The AASA file is configured for Apple Team ID **`X7HCF4WY12`** (Giovanni Sacco's free Personal Team) paired with the `app.scribio` bundle ID. This Team ID was extracted from Xcode's "Manage Certificates…" dialog where it appears as `LT-X7HCF4WY12` (the `LT-` prefix denotes a Local Tester / Personal Team certificate).
+The AASA file is configured for Apple Team ID **`SAFFCT6GS7`** (Apple Developer Program, Individual enrolment, Giovanni Sacco) paired with the `app.scribio` bundle ID.
 
-If the Apple Developer team changes (e.g., enrolling in the paid Apple Developer Program with a different team, or Scribio joining an existing organisation team), update both occurrences of `X7HCF4WY12` in `.well-known/apple-app-site-association` and push. Apple's CDN cache takes 24–48 h to refresh after AASA changes.
+The Team ID was originally `X7HCF4WY12` (free Personal Team / Local Tester), pulled from Xcode's "Manage Certificates…" dialog where it appeared as `LT-X7HCF4WY12`. It was promoted to the real ADP Team ID `SAFFCT6GS7` on 2026-05-02 once Apple Developer Program enrolment cleared.
+
+If the Apple Developer team changes again (e.g., Scribio joining an existing organisation team), update both occurrences of the Team ID in `.well-known/apple-app-site-association` and push. Apple's CDN cache takes 24–48 h to refresh after AASA changes.
 
 Read the current Team ID at any time via:
 
