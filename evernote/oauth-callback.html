@@ -51,42 +51,40 @@
   <h2>Sign-in complete</h2>
   <p id="status">Returning you to Scribio…</p>
   <p class="hint">
-    On macOS, the Scribio app intercepts this URL via Universal Links
-    (<code>apple-app-site-association</code>) and handles the callback
-    natively. If you saw this page, the Universal Link binding deferred
-    to the browser — your authorization still completed.
+    OAuth landing page for Evernote (OAuth 1.0a). Evernote returns
+    <code>oauth_token</code> + <code>oauth_verifier</code> rather than
+    OAuth 2.0's <code>code</code>+<code>state</code>. Scribio bounces this
+    callback to its <code>scribio://oauth/evernote</code> custom URL scheme
+    so the desktop app receives the temporary token + verifier natively.
   </p>
   <div class="closeable" id="closeable" hidden>
     <p>You can close this tab.</p>
     <button onclick="window.close()">Close tab</button>
   </div>
   <script>
-    // Scribio-vzi follow-up — bounce the OAuth callback to the scribio://
-    // custom URL scheme so non-AASA paths (Chrome, Universal-Link-cache
-    // misses, post-OAuth flows where Safari didn't intercept) still reach
-    // the app instead of leaving a stranded blank tab.
-    //
-    // Best-effort window.close() runs after a short delay so the user has
-    // visual feedback. window.close() is silently blocked by modern
-    // browsers when the tab wasn't opened by JavaScript, so we always
-    // also render a "Close tab" button as fallback (user-initiated close
-    // is permitted).
+    // Evernote uses OAuth 1.0a — params are oauth_token + oauth_verifier
+    // rather than OAuth 2.0's code+state. The scheme handler in Scribio
+    // (EvernoteOAuthHandler) reads these param names directly, so we
+    // preserve them verbatim.
     (function () {
       var params = new URLSearchParams(window.location.search);
-      var code = params.get('code');
-      var state = params.get('state');
-      if (code) {
-        var deeplink = 'scribio://oauth/zoom?code=' + encodeURIComponent(code) +
-                       '&state=' + encodeURIComponent(state || '');
-        // Fire after a tick so the page can paint the spinner first.
+      var oauthToken = params.get('oauth_token');
+      var oauthVerifier = params.get('oauth_verifier');
+      if (oauthToken && oauthVerifier) {
+        var deeplink = 'scribio://oauth/evernote?oauth_token=' + encodeURIComponent(oauthToken) +
+                       '&oauth_verifier=' + encodeURIComponent(oauthVerifier);
         setTimeout(function () { window.location.href = deeplink; }, 100);
+      } else if (oauthToken) {
+        // User declined consent — Evernote returns oauth_token without
+        // verifier. Forward both fields so Scribio can detect the decline.
+        var deeplink = 'scribio://oauth/evernote?oauth_token=' + encodeURIComponent(oauthToken);
+        setTimeout(function () { window.location.href = deeplink; }, 100);
+        document.getElementById('status').textContent =
+          'Sign-in was cancelled or declined. Returning to Scribio…';
       } else {
         document.getElementById('status').textContent =
-          'No authorization code received. You can close this tab.';
+          'No authorization received. You can close this tab.';
       }
-      // After the deep-link has had a moment to fire, surface the close
-      // affordance + attempt programmatic close (silently no-ops if
-      // blocked).
       setTimeout(function () {
         document.getElementById('closeable').hidden = false;
         try { window.close(); } catch (e) { /* expected on most browsers */ }

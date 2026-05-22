@@ -51,42 +51,38 @@
   <h2>Sign-in complete</h2>
   <p id="status">Returning you to Scribio…</p>
   <p class="hint">
-    On macOS, the Scribio app intercepts this URL via Universal Links
-    (<code>apple-app-site-association</code>) and handles the callback
-    natively. If you saw this page, the Universal Link binding deferred
-    to the browser — your authorization still completed.
+    OAuth landing page for OneDrive. Scribio bounces this callback to its
+    <code>scribio://oauth/onedrive</code> custom URL scheme so the desktop
+    app receives the authorization code natively. The same Azure AD app
+    serves both Microsoft 365 (Graph) and OneDrive integrations; only the
+    redirect path differs.
   </p>
   <div class="closeable" id="closeable" hidden>
     <p>You can close this tab.</p>
     <button onclick="window.close()">Close tab</button>
   </div>
   <script>
-    // Scribio-vzi follow-up — bounce the OAuth callback to the scribio://
-    // custom URL scheme so non-AASA paths (Chrome, Universal-Link-cache
-    // misses, post-OAuth flows where Safari didn't intercept) still reach
-    // the app instead of leaving a stranded blank tab.
-    //
-    // Best-effort window.close() runs after a short delay so the user has
-    // visual feedback. window.close() is silently blocked by modern
-    // browsers when the tab wasn't opened by JavaScript, so we always
-    // also render a "Close tab" button as fallback (user-initiated close
-    // is permitted).
     (function () {
       var params = new URLSearchParams(window.location.search);
       var code = params.get('code');
       var state = params.get('state');
+      var oauthError = params.get('error');
+      var errorDescription = params.get('error_description');
       if (code) {
-        var deeplink = 'scribio://oauth/zoom?code=' + encodeURIComponent(code) +
+        var deeplink = 'scribio://oauth/onedrive?code=' + encodeURIComponent(code) +
                        '&state=' + encodeURIComponent(state || '');
-        // Fire after a tick so the page can paint the spinner first.
         setTimeout(function () { window.location.href = deeplink; }, 100);
+      } else if (oauthError) {
+        var deeplink = 'scribio://oauth/onedrive?error=' + encodeURIComponent(oauthError) +
+                       '&error_description=' + encodeURIComponent(errorDescription || '') +
+                       '&state=' + encodeURIComponent(state || '');
+        setTimeout(function () { window.location.href = deeplink; }, 100);
+        document.getElementById('status').textContent =
+          'Microsoft reported an error during sign-in. Returning to Scribio…';
       } else {
         document.getElementById('status').textContent =
           'No authorization code received. You can close this tab.';
       }
-      // After the deep-link has had a moment to fire, surface the close
-      // affordance + attempt programmatic close (silently no-ops if
-      // blocked).
       setTimeout(function () {
         document.getElementById('closeable').hidden = false;
         try { window.close(); } catch (e) { /* expected on most browsers */ }
