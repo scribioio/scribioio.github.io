@@ -7,6 +7,10 @@
           {
             "/": "/zoom/oauth-callback*",
             "comment": "Zoom Marketplace OAuth redirect — Scribio intercepts via Universal Link before browser navigates"
+          },
+          {
+            "/": "/linkedin/oauth-callback*",
+            "comment": "LinkedIn OIDC OAuth redirect — LinkedIn portal refuses custom URL schemes so we use AASA-bound HTTPS; Scribio intercepts via Universal Link before browser navigates"
           }
         ]
       }
