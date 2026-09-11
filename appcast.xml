@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+    <channel>
+        <title>Scribio</title>
+        <link>https://scribio.app/appcast.xml</link>
+        <description>Scribio updates</description>
+        <language>en</language>
+        <item>
+            <title>Version 1.0.0-beta.12</title>
+            <pubDate>Fri, 11 Sep 2026 20:37:20 +0000</pubDate>
+            <sparkle:version>1.0.0-beta.12</sparkle:version>
+            <sparkle:shortVersionString>1.0.0-beta.12</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <sparkle:channel>beta</sparkle:channel>
+            <sparkle:phasedRolloutInterval>86400</sparkle:phasedRolloutInterval>
+            <enclosure
+                url="https://github.com/scribioio/scribioio.github.io/releases/download/v1.0.0-beta.12/Scribio-1.0.0-beta.12.dmg"
+                length="323793902"
+                type="application/octet-stream"
+                sparkle:edSignature="RJLESvdVEfyB4ePv8Ia/iltNEV/Eh12gzmxKNd8CAiytvm0fiSsd5gGkRzWxMFtPSXqY8G5ak3nyoRpn1V7TDg==" />
+        </item>
+    </channel>
+</rss>
