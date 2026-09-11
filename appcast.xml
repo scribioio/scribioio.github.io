@@ -6,6 +6,20 @@
         <description>Scribio updates</description>
         <language>en</language>
         <item>
+            <title>Version 1.0.0-beta.13</title>
+            <pubDate>Fri, 11 Sep 2026 22:33:19 +0000</pubDate>
+            <sparkle:version>1.0.0-beta.13</sparkle:version>
+            <sparkle:shortVersionString>1.0.0-beta.13</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <sparkle:channel>beta</sparkle:channel>
+            <sparkle:phasedRolloutInterval>86400</sparkle:phasedRolloutInterval>
+            <enclosure
+                url="https://github.com/scribioio/scribioio.github.io/releases/download/v1.0.0-beta.13/Scribio-1.0.0-beta.13.dmg"
+                length="323819144"
+                type="application/octet-stream"
+                sparkle:edSignature="koNvn+xZgRya7k+k8wGMuVsbpfYH1p7UD+mPCYe7zvkYRm4DmpoLq2tQqxGCNJHAsY+Yv09tu1yZoTt+GQWMDA==" />
+        </item>
+        <item>
             <title>Version 1.0.0-beta.12</title>
             <pubDate>Fri, 11 Sep 2026 20:37:20 +0000</pubDate>
             <sparkle:version>1.0.0-beta.12</sparkle:version>
