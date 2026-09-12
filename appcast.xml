@@ -6,60 +6,22 @@
         <description>Scribio updates</description>
         <language>en</language>
         <item>
-            <title>Version 1.0.0-beta.15</title>
-            <pubDate>Sat, 12 Sep 2026 14:46:34 +0000</pubDate>
-            <sparkle:version>1.0.0-beta.15</sparkle:version>
-            <sparkle:shortVersionString>1.0.0-beta.15</sparkle:shortVersionString>
+            <title>Version 1.0.0-beta.16</title>
+            <pubDate>Sat, 12 Sep 2026 22:21:42 +0000</pubDate>
+            <sparkle:version>1789251087</sparkle:version>
+            <sparkle:shortVersionString>1.0.0-beta.16</sparkle:shortVersionString>
+            <description><![CDATA[<h2>1.0.0-beta.16</h2>
+<h3>Fixed</h3>
+<ul><li>Setup → Calendar: one <strong>Allow</strong> now flips the row. The OS's answer is trusted instead of a status read that lagged it.</li><li>Microsoft 365: a refusal is worded honestly (cancelled, or your organisation must approve Scribio once) and the IT approval link is offered from setup.</li><li>Updates: this is the first build that can receive updates. Every earlier build shipped without its update configuration, so <strong>install this one from the DMG</strong> — the next release arrives through Check for Updates.</li></ul>
+<h3>New</h3>
+<ul><li>Setup asks once how Scribio updates itself: automatic checks (on) and beta updates (off).</li></ul>]]></description>
             <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
             <sparkle:channel>beta</sparkle:channel>
-            <sparkle:phasedRolloutInterval>86400</sparkle:phasedRolloutInterval>
             <enclosure
-                url="https://github.com/scribioio/scribioio.github.io/releases/download/v1.0.0-beta.15/Scribio-1.0.0-beta.15.dmg"
-                length="323945600"
+                url="https://github.com/scribioio/scribioio.github.io/releases/download/v1.0.0-beta.16/Scribio-1.0.0-beta.16.dmg"
+                length="323862467"
                 type="application/octet-stream"
-                sparkle:edSignature="qdhU0Zrm3WV484cTRCIF3PjTJyDiylYY/P8+LdYcAAMK8ocJ0ksdPuBxUAFntBWoZCKWj6ZSYj67xckK5GeVDA==" />
-        </item>
-        <item>
-            <title>Version 1.0.0-beta.14</title>
-            <pubDate>Sat, 12 Sep 2026 03:04:01 +0000</pubDate>
-            <sparkle:version>1.0.0-beta.14</sparkle:version>
-            <sparkle:shortVersionString>1.0.0-beta.14</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-            <sparkle:channel>beta</sparkle:channel>
-            <sparkle:phasedRolloutInterval>86400</sparkle:phasedRolloutInterval>
-            <enclosure
-                url="https://github.com/scribioio/scribioio.github.io/releases/download/v1.0.0-beta.14/Scribio-1.0.0-beta.14.dmg"
-                length="323937424"
-                type="application/octet-stream"
-                sparkle:edSignature="va6kh+B/g3wVD4spQjn/4/eLfO1494pkv2JqUcMDKQ6t46uUzSYoe3e7IGHjdP05Ov7V7gznHPNOQICyN/l9BQ==" />
-        </item>
-        <item>
-            <title>Version 1.0.0-beta.13</title>
-            <pubDate>Fri, 11 Sep 2026 22:33:19 +0000</pubDate>
-            <sparkle:version>1.0.0-beta.13</sparkle:version>
-            <sparkle:shortVersionString>1.0.0-beta.13</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-            <sparkle:channel>beta</sparkle:channel>
-            <sparkle:phasedRolloutInterval>86400</sparkle:phasedRolloutInterval>
-            <enclosure
-                url="https://github.com/scribioio/scribioio.github.io/releases/download/v1.0.0-beta.13/Scribio-1.0.0-beta.13.dmg"
-                length="323819144"
-                type="application/octet-stream"
-                sparkle:edSignature="koNvn+xZgRya7k+k8wGMuVsbpfYH1p7UD+mPCYe7zvkYRm4DmpoLq2tQqxGCNJHAsY+Yv09tu1yZoTt+GQWMDA==" />
-        </item>
-        <item>
-            <title>Version 1.0.0-beta.12</title>
-            <pubDate>Fri, 11 Sep 2026 20:37:20 +0000</pubDate>
-            <sparkle:version>1.0.0-beta.12</sparkle:version>
-            <sparkle:shortVersionString>1.0.0-beta.12</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-            <sparkle:channel>beta</sparkle:channel>
-            <sparkle:phasedRolloutInterval>86400</sparkle:phasedRolloutInterval>
-            <enclosure
-                url="https://github.com/scribioio/scribioio.github.io/releases/download/v1.0.0-beta.12/Scribio-1.0.0-beta.12.dmg"
-                length="323793902"
-                type="application/octet-stream"
-                sparkle:edSignature="RJLESvdVEfyB4ePv8Ia/iltNEV/Eh12gzmxKNd8CAiytvm0fiSsd5gGkRzWxMFtPSXqY8G5ak3nyoRpn1V7TDg==" />
+                sparkle:edSignature="wohRKbHUcEIR2ZG0AxzDNFTaU9so7SgMSX3cWSRVzcf/OI+izSOPW6wKkbN8yLZN8MoyCZ+wufCUgxp+2mbqAQ==" />
         </item>
     </channel>
 </rss>
