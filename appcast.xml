@@ -6,6 +6,25 @@
         <description>Scribio updates</description>
         <language>en</language>
         <item>
+            <title>Version 1.0.0-beta.17</title>
+            <pubDate>Sun, 13 Sep 2026 17:04:01 +0000</pubDate>
+            <sparkle:version>1789318419</sparkle:version>
+            <sparkle:shortVersionString>1.0.0-beta.17</sparkle:shortVersionString>
+            <description><![CDATA[<h2>1.0.0-beta.17</h2>
+<p>The first Scribio release delivered as an update rather than a download. If you are on beta.16, <strong>Check for Updates</strong> should find this one.</p>
+<h3>New</h3>
+<ul><li>Setup now ends by telling you what it <strong>already</strong> found — permissions, your calendar, backups, and your voice with the date you enrolled it. Steps that were already done used to be dropped silently, which made a finished setup look like a skipped one.</li><li>Settings → About → Updates: install automatically, hold an update while a recording is running, and a line saying when Scribio last looked.</li><li><strong>Check for Updates…</strong> is now in the Scribio menu and the menu bar, and About shows a <strong>Beta channel</strong> badge while beta updates are on.</li></ul>
+<h3>Fixed</h3>
+<ul><li>Your voice: "enrolled" now means a voiceprint this Mac can actually use. A profile carried over from another Mac — whose encryption key stayed behind by design — used to satisfy setup while recognising nobody. If enrolment is missing or was skipped, Scribio now says so instead of waiting for a meeting.</li><li>Microsoft 365 asks for your <strong>calendar only</strong>. Meeting attendance reports are requested later, if you turn them on — so the first approval your organisation sees is the smallest one that works.</li></ul>]]></description>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <sparkle:channel>beta</sparkle:channel>
+            <enclosure
+                url="https://github.com/scribioio/scribioio.github.io/releases/download/v1.0.0-beta.17/Scribio-1.0.0-beta.17.dmg"
+                length="323933434"
+                type="application/octet-stream"
+                sparkle:edSignature="oySHs0+e1lW5m1QGBdGTpCuAgiqNujEVodv4VEdfcGc2+t9RRhp0dHFXQx9U8zKCq85QoqwT4OaVpPF+MqPhAw==" />
+        </item>
+        <item>
             <title>Version 1.0.0-beta.16</title>
             <pubDate>Sat, 12 Sep 2026 22:21:42 +0000</pubDate>
             <sparkle:version>1789251087</sparkle:version>
