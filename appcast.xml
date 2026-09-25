@@ -6,6 +6,25 @@
         <description>Scribio updates</description>
         <language>en</language>
         <item>
+            <title>Version 1.0.0-beta.18</title>
+            <pubDate>Fri, 25 Sep 2026 19:04:58 +0000</pubDate>
+            <sparkle:version>1790362579</sparkle:version>
+            <sparkle:shortVersionString>1.0.0-beta.18</sparkle:shortVersionString>
+            <description><![CDATA[<h2>1.0.0-beta.18</h2>
+<p>Mostly stability and speaker naming. If you are on beta.16 or beta.17, <strong>Check for Updates</strong> will find this one.</p>
+<h3>New</h3>
+<ul><li><strong>Long meetings are summarised end to end.</strong> Scribio now reads a long meeting in parts and combines them, so what was said in the middle of a call makes it into the summary.</li><li><strong>The summary arrives sooner.</strong> Chapters and search indexing now run after it instead of before it.</li><li><strong>iCloud Drive and OneDrive</strong> can be chosen as backup locations. iCloud Drive backups appear in Finder in the Scribio Backups folder in iCloud Drive.</li><li>A speaker still shown as <strong>"Speaker N"</strong> now says why no name was found and offers the fix.</li><li>Asking the chat about <strong>all meetings</strong> now searches your transcripts and summaries by what you typed, and says so when nothing matches instead of answering from unrelated passages.</li></ul>
+<h3>Fixed</h3>
+<ul><li>Scribio could <strong>freeze for minutes</strong> during or after a call — in the Live Meeting Companion's transcript and in AI Chat. Both are fixed, and if the window ever freezes anyway, Scribio now restarts itself rather than staying stuck.</li><li><strong>Minimizing the Live Meeting Companion quit Scribio.</strong> Opening <strong>Settings → iCloud</strong> could also quit it.</li><li><strong>Deleting a meeting now deletes its recording.</strong> Recordings left behind by meetings deleted earlier can be removed with Review Reclaimable Space, in the Field Capture section of Settings → Diagnostics.</li><li>After moving your library to a new Mac, older meetings <strong>play again</strong>.</li><li>A meeting where <strong>you are the only one speaking</strong> is named as you — and Scribio now checks the voice is actually yours first, so a video playing into your microphone is no longer credited to you.</li><li>The Updates status no longer reads "checked in 48m" for a check that already happened.</li></ul>]]></description>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <sparkle:channel>beta</sparkle:channel>
+            <enclosure
+                url="https://github.com/scribioio/scribioio.github.io/releases/download/v1.0.0-beta.18/Scribio-1.0.0-beta.18.dmg"
+                length="323237164"
+                type="application/octet-stream"
+                sparkle:edSignature="dwAVZM6upwsooXQoXh1y+lnEo6hj6sg7XRuOWuE+4WKrw53Fids4pm9K0EOi1p0K/83uIw++GwqwXpibln5hDA==" />
+        </item>
+        <item>
             <title>Version 1.0.0-beta.17</title>
             <pubDate>Sun, 13 Sep 2026 17:04:01 +0000</pubDate>
             <sparkle:version>1789318419</sparkle:version>
