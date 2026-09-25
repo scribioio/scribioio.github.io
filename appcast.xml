@@ -6,6 +6,23 @@
         <description>Scribio updates</description>
         <language>en</language>
         <item>
+            <title>Version 1.0.0-beta.19</title>
+            <pubDate>Fri, 25 Sep 2026 19:34:29 +0000</pubDate>
+            <sparkle:version>1790364354</sparkle:version>
+            <sparkle:shortVersionString>1.0.0-beta.19</sparkle:shortVersionString>
+            <description><![CDATA[<h2>1.0.0-beta.19</h2>
+<p>Fixes beta.18, which would not open on macOS 26 or earlier — macOS reported that Scribio "cannot be opened because of a problem". Everything new in beta.18 is included.</p>
+<h3>Fixed</h3>
+<ul><li><strong>Scribio opens again on macOS 26 (Tahoe).</strong> beta.18 was built in a way that required macOS 27 without saying so.</li></ul>]]></description>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <sparkle:channel>beta</sparkle:channel>
+            <enclosure
+                url="https://github.com/scribioio/scribioio.github.io/releases/download/v1.0.0-beta.19/Scribio-1.0.0-beta.19.dmg"
+                length="323223570"
+                type="application/octet-stream"
+                sparkle:edSignature="hJaxkCTpNkymtnAmW5+6AwZxN0A77DmXWC9vUe8/kMh2sKOdudwj8cdgOqTzaR0zc5drqUjrhkolr/i1KfxbDA==" />
+        </item>
+        <item>
             <title>Version 1.0.0-beta.18</title>
             <pubDate>Fri, 25 Sep 2026 19:04:58 +0000</pubDate>
             <sparkle:version>1790362579</sparkle:version>
