@@ -6,6 +6,35 @@
         <description>Scribio updates</description>
         <language>en</language>
         <item>
+            <title>Version 1.0.0-beta.20</title>
+            <pubDate>Wed, 14 Oct 2026 20:31:56 +0000</pubDate>
+            <sparkle:version>1792009310</sparkle:version>
+            <sparkle:shortVersionString>1.0.0-beta.20</sparkle:shortVersionString>
+            <description><![CDATA[<h2>1.0.0-beta.20</h2>
+<p>Scribio's new look, a structured record of every meeting, and meetings joined in a browser.</p>
+<h3>Before you update</h3>
+<ul><li><strong>Scribio now requires macOS 26 (Tahoe) or later.</strong> On Macs with less memory, Apple Intelligence writes the summaries, and macOS 26 is the first release where an app can use it. Macs on macOS 15 keep the version they have and are no longer offered updates.</li></ul>
+<h3>New look</h3>
+<ul><li><strong>The Evil Genius design.</strong> A new palette, typeface and app icon (seven bars on navy), with Start recording as the one orange button on screen.</li><li><strong>A guided setup with a brand rail.</strong> Permissions on cards, a recommended summary model that downloads while setup carries on, and calendar, backups, updates, summary style and voice in one pass.</li><li><strong>Settings reorganised.</strong> About, Integrations, Storage › Backup &amp; restore, and Diagnostics as Support and Maintenance.</li></ul>
+<h3>Meetings</h3>
+<ul><li><strong>A structured record of each meeting.</strong> Topics, decisions, proposals, actions, risks and open questions, each with the quoted lines it came from.</li><li><strong>A redesigned Summary tab.</strong> One column of rows, a timeline strip that is also the player, a collapsible inspector, and a summary written for the reader you choose.</li><li><strong>Every jump into the transcript lands on its line</strong> and stays marked.</li><li><strong>Titles.</strong> A meeting takes its calendar subject when the match is certain, and you can rename any meeting.</li><li><strong>Tasks, Graph and Intelligence pages redesigned.</strong> A task list with a board by status and projects on tasks; the Graph with Focus and Connections; Intelligence as a briefing.</li></ul>
+<h3>Recording</h3>
+<ul><li><strong>Meetings joined in a browser are detected and recorded.</strong> This covers Zoom, Google Meet, Microsoft Teams and other services in Safari, Chrome, Edge, Firefox and other browsers.</li><li><strong>The live meeting screen is redesigned.</strong> It has a roomier note box, screenshots at the moment, Mark next step / Mark decision, and sentiment while you record.</li><li><strong>Ask Scribio AI during a recording</strong> with the model you chose.</li><li><strong>Saving a meeting's audio can be switched off</strong> in the middle of a meeting.</li><li><strong>Window buttons.</strong> Yellow hides Scribio from the Dock and keeps it in the menu bar; red quits. During a recording Scribio asks first, then stops and saves before quitting.</li></ul>
+<h3>Speaker identification</h3>
+<ul><li><strong>Microsoft Teams calls: Scribio now listens to the Teams process that plays the call.</strong> It used to hear silence there, so it could not tell you from the other side and left extra unnamed speakers. Earlier Teams meetings cannot be repaired automatically; merge their placeholder speakers by hand.</li></ul>
+<h3>Models</h3>
+<ul><li><strong>Below 16 GB of memory, Apple Intelligence is the default summariser.</strong> From 16 GB, Qwen3.5 9B is the default.</li><li><strong>Models download from Scribio's own server first</strong>, with a progress bar. They follow your Mac's proxy settings, and Hugging Face is the fallback.</li></ul>
+<h3>Fixed</h3>
+<ul><li><strong>Long meetings get a complete record</strong> instead of stopping partway.</li><li><strong>A link inside a summary asks before it opens.</strong></li><li><strong>NDA clean only puts a cleaned copy on your clipboard after it passes every check.</strong></li></ul>]]></description>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <sparkle:channel>beta</sparkle:channel>
+            <enclosure
+                url="https://github.com/scribioio/scribioio.github.io/releases/download/v1.0.0-beta.20/Scribio-1.0.0-beta.20.dmg"
+                length="323293796"
+                type="application/octet-stream"
+                sparkle:edSignature="vsIpfr+qN2kwsTqBTLzYP6JVBcAE8fr04BtvEf5fsSG0MypBfJwYfJrsyF2smxLm8o1LX1h1q5c6flRLIhrNBA==" />
+        </item>
+        <item>
             <title>Version 1.0.0-beta.19</title>
             <pubDate>Fri, 25 Sep 2026 19:34:29 +0000</pubDate>
             <sparkle:version>1790364354</sparkle:version>
