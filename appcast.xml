@@ -6,6 +6,28 @@
         <description>Scribio updates</description>
         <language>en</language>
         <item>
+            <title>Version 1.0.0-beta.22</title>
+            <pubDate>Fri, 16 Oct 2026 17:02:26 +0000</pubDate>
+            <sparkle:version>1792169556</sparkle:version>
+            <sparkle:shortVersionString>1.0.0-beta.22</sparkle:shortVersionString>
+            <description><![CDATA[<h2>1.0.0-beta.22</h2>
+<p>Meetings with too many speakers are actually cleaned up now, and Settings shows the cleanup while it runs.</p>
+<h3>Speaker identification</h3>
+<ul><li><strong>Meetings with too many speakers are cleaned up for real.</strong> beta.21's cleanup re-ran speaker identification on these meetings but left most of their "Speaker N" rows in place. Scribio now listens to each such meeting again, works out how many voices it really holds, and joins the "Speaker N" rows that are the same voice. A row that is the same voice as a named person becomes that person. A row that mixes two voices is split up line by line. Every meeting that beta.21 already went through is cleaned up once more, in the background, newest first and never during a recording.</li><li><strong>What is never changed:</strong> names you typed or confirmed yourself, names from your calendar, and your own name. When one voice could belong to either of two named people, Scribio leaves it alone rather than guess. Lines from your microphone and lines from the call are never joined.</li><li><strong>Every join can be undone</strong> in Settings → Diagnostics → Recent Merges. Lines moved one by one are recorded but cannot be undone from there; you can still move any line to the right person yourself.</li></ul>
+<h3>Settings</h3>
+<ul><li><strong>Upgrade Past Meetings shows a background upgrade while it runs,</strong> with how many meetings it has done, and greys out the Run buttons until it finishes. Before, a background upgrade showed nothing, and pressing Run started a second copy of the same work.</li><li><strong>The past-meeting settings describe what runs on its own.</strong> "Ask me" and "Automatic" now say that meetings left with too many speakers are fixed without asking. Choosing Manual still turns this off.</li></ul>
+<h3>Also new if you're coming from beta.20</h3>
+<p>If you skipped beta.21, this update brings its fixes too:</p>
+<ul><li><strong>Closing the lid after a meeting no longer breaks its processing.</strong> The work pauses while the Mac sleeps and carries on when it wakes.</li><li><strong>Reprocess works again,</strong> and a summary that runs out of room in Apple Intelligence is trimmed until it fits.</li><li><strong>The summary model downloads by itself</strong> on Macs with 16 GB of memory or more, once setup is done and never during a recording. A model already on your Mac is never downloaded again, and a download that stops partway resumes where it stopped.</li><li><strong>The window stays where you can reach it,</strong> even when it was taller than the screen or slipped under the Dock.</li><li><strong>Speakers come out named more often:</strong> names on Teams and Zoom tiles are read more reliably, including the highlighted border around whoever is speaking.</li><li><strong>Fuller summaries for earlier meetings:</strong> click <strong>Upgrade Now</strong> when Scribio offers to upgrade past meetings, or <strong>Regenerate</strong> on a meeting's Summary tab.</li></ul>]]></description>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <sparkle:channel>beta</sparkle:channel>
+            <enclosure
+                url="https://github.com/scribioio/scribioio.github.io/releases/download/v1.0.0-beta.22/Scribio-1.0.0-beta.22.dmg"
+                length="328139460"
+                type="application/octet-stream"
+                sparkle:edSignature="ImLMNgW4NM+5Y4e/LwHYgcRYcr5baP17t2Sm8dmX/XiE/rHusHW4NatG1L74o1fp8HZMVU4Rr7J7zW5j0RyACw==" />
+        </item>
+        <item>
             <title>Version 1.0.0-beta.21</title>
             <pubDate>Fri, 16 Oct 2026 15:24:08 +0000</pubDate>
             <sparkle:version>1792163529</sparkle:version>
