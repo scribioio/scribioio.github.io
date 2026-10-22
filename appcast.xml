@@ -6,6 +6,29 @@
         <description>Scribio updates</description>
         <language>en</language>
         <item>
+            <title>Version 1.0.0-beta.24</title>
+            <pubDate>Thu, 22 Oct 2026 11:40:56 +0000</pubDate>
+            <sparkle:version>1792668582</sparkle:version>
+            <sparkle:shortVersionString>1.0.0-beta.24</sparkle:shortVersionString>
+            <description><![CDATA[<h2>1.0.0-beta.24</h2>
+<p>Chatting in Teams no longer starts a recording, every screen updates as soon as something changes, and meetings take their calendar title.</p>
+<h3>Recording</h3>
+<ul><li><strong>Chatting in Teams no longer starts a recording.</strong> Moving between Teams chats could look like joining a meeting, because Teams gives chats and meetings the same kind of window title. Scribio now waits for a sign of a real call — Teams using the microphone, playing call audio, or reporting a call in progress — and starts within seconds of joining. The minutes you spend waiting in a Teams lobby before the call starts are no longer recorded.</li><li><strong>A notification sound is not a call.</strong> A single chime from a chat app no longer counts as a call starting.</li><li><strong>Meetings cut off by a crash or a forced quit keep their real length.</strong> Their end time now comes from the audio itself, and meetings that earlier showed as hours long are corrected automatically.</li></ul>
+<h3>Everything stays up to date</h3>
+<ul><li><strong>Every screen updates as soon as something changes.</strong> Rename or merge a speaker, move a line, tick off a task, or let a background update finish, and the meeting list, Summary, Actions, Intelligence, Tasks, search and People pages all show the change without opening the meeting again. A note or task you are typing is never overwritten.</li><li><strong>During a recording,</strong> screens you are not looking at refresh at a slower pace, so the recording is never slowed down.</li></ul>
+<h3>Meeting titles</h3>
+<ul><li><strong>A meeting takes its calendar event's name.</strong> When Scribio is sure which event a meeting belongs to, the meeting is named after it; otherwise it keeps the name Scribio writes. A name you typed always wins.</li><li><strong>Calendar names are cleaned up:</strong> prefixes such as RE:, FW:, FWD:, [EXTERNAL] and Updated invitation: are removed, including stacked ones and common versions in other languages.</li><li><strong>Past meetings are renamed too,</strong> a few at a time in the background. If your work calendar is not available on this Mac (for example the account was removed from the Calendar app), Scribio waits for it rather than giving up.</li></ul>
+<h3>Also</h3>
+<ul><li><strong>Background work is safer when more than one copy of Scribio is open,</strong> and anything it had to postpone runs as soon as it can.</li></ul>]]></description>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <sparkle:channel>beta</sparkle:channel>
+            <enclosure
+                url="https://github.com/scribioio/scribioio.github.io/releases/download/v1.0.0-beta.24/Scribio-1.0.0-beta.24.dmg"
+                length="329911428"
+                type="application/octet-stream"
+                sparkle:edSignature="z4LG4LVadburM3ih+T9zbkZRq7rb/VVNkCUoiRr0JgPrPk+InSAkthXJ7WXMfNwR75+7lcmLriLVZ3TwZjaWDw==" />
+        </item>
+        <item>
             <title>Version 1.0.0-beta.23</title>
             <pubDate>Thu, 22 Oct 2026 01:42:37 +0000</pubDate>
             <sparkle:version>1792632643</sparkle:version>
