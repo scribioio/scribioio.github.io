@@ -43,3 +43,14 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+
+# OAuth callback pages carry a one-time authorisation code in their URL. Keep Cloudflare
+# Web Analytics (and any other third-party script or beacon) OFF them: detach the site-wide
+# CSP above and apply the strict one without the cloudflareinsights hosts. Pages serves
+# these both with and without ".html".
+/:service/oauth-callback
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-hashes' 'sha256-4Syl2W1sH6ZxXuNfLnAHxlDmPG4ZInyKQAT2vKKbhIw=' 'sha256-I5qar4Nj0iqsBqAuuRfXF4aa812oejnZPSBnedalOwM=' 'sha256-QKpmY+DZ85YyP2P0lF3Ys0ckQgOkY7UDc56eG3WvI4U=' 'sha256-ZrG5gYdjcScyzCEFzqBVMduBOQI+AcIQtZqWg9iJ0eU=' 'sha256-jqxtvDkBbRAl9Hpqv68WdNOieepg8tJSYu1xIy7zT34=' 'sha256-ot8wm+smFDEBwVgKnbuMHyuQ2LaQIoaaokIMP9Yd7/Q=' 'sha256-wtO1Wo7Jua305wdF0kRW/TNBYpCMzIAxalhJi5q0qJg='; style-src 'self' 'unsafe-hashes' https://fonts.googleapis.com 'sha256-/FWcheSXSLcRW6lqqYEs16hg5ZOym56UNpe5gPhNRG0=' 'sha256-028WArkUGGpgGY65EtwZstrehino6h4ANrXgJDmQjls=' 'sha256-A7D04FWoGcqK3wKyW7tufpMoQ66H2Ry0w+euf/Ho9JA=' 'sha256-MiPgDldwa8URbFCSFpd0KvoCGs8+6zbAqQuQl1hGjU4=' 'sha256-Or1RpAgmr+u//W5XapygDzKlSYHaWDcNalJJtTkRG7Y=' 'sha256-SHKNGOb3r9HDdFSWxCg/iERmv6GzdC1QTJBbsoQZGXM='; font-src https://fonts.gstatic.com; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+/:service/oauth-callback.html
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-hashes' 'sha256-4Syl2W1sH6ZxXuNfLnAHxlDmPG4ZInyKQAT2vKKbhIw=' 'sha256-I5qar4Nj0iqsBqAuuRfXF4aa812oejnZPSBnedalOwM=' 'sha256-QKpmY+DZ85YyP2P0lF3Ys0ckQgOkY7UDc56eG3WvI4U=' 'sha256-ZrG5gYdjcScyzCEFzqBVMduBOQI+AcIQtZqWg9iJ0eU=' 'sha256-jqxtvDkBbRAl9Hpqv68WdNOieepg8tJSYu1xIy7zT34=' 'sha256-ot8wm+smFDEBwVgKnbuMHyuQ2LaQIoaaokIMP9Yd7/Q=' 'sha256-wtO1Wo7Jua305wdF0kRW/TNBYpCMzIAxalhJi5q0qJg='; style-src 'self' 'unsafe-hashes' https://fonts.googleapis.com 'sha256-/FWcheSXSLcRW6lqqYEs16hg5ZOym56UNpe5gPhNRG0=' 'sha256-028WArkUGGpgGY65EtwZstrehino6h4ANrXgJDmQjls=' 'sha256-A7D04FWoGcqK3wKyW7tufpMoQ66H2Ry0w+euf/Ho9JA=' 'sha256-MiPgDldwa8URbFCSFpd0KvoCGs8+6zbAqQuQl1hGjU4=' 'sha256-Or1RpAgmr+u//W5XapygDzKlSYHaWDcNalJJtTkRG7Y=' 'sha256-SHKNGOb3r9HDdFSWxCg/iERmv6GzdC1QTJBbsoQZGXM='; font-src https://fonts.gstatic.com; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
