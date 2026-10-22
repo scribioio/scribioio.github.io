@@ -25,6 +25,8 @@
 #   - default-src 'self' covers connect/frame/media; object-src, base-uri and
 #     form-action are 'none' (no plugins, no <base>, no forms).
 #   - frame-ancestors 'none': no one may frame these pages.
+#   - Cloudflare Web Analytics (injected by Pages): its script from
+#     static.cloudflareinsights.com and its beacon to cloudflareinsights.com.
 # The scribio:// deep link the callbacks navigate to is not governed by CSP.
 # Cloudflare JavaScript Detections (audit M5) injects an inline script that a
 # static header cannot hash (it changes per response); with JSD on, the browser
@@ -36,7 +38,7 @@
 # These add no Content-Type and no Cache-Control, so /appcast.xml keeps
 # Pages' application/xml and its revalidating cache unchanged.
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-hashes' 'sha256-4Syl2W1sH6ZxXuNfLnAHxlDmPG4ZInyKQAT2vKKbhIw=' 'sha256-I5qar4Nj0iqsBqAuuRfXF4aa812oejnZPSBnedalOwM=' 'sha256-QKpmY+DZ85YyP2P0lF3Ys0ckQgOkY7UDc56eG3WvI4U=' 'sha256-ZrG5gYdjcScyzCEFzqBVMduBOQI+AcIQtZqWg9iJ0eU=' 'sha256-jqxtvDkBbRAl9Hpqv68WdNOieepg8tJSYu1xIy7zT34=' 'sha256-ot8wm+smFDEBwVgKnbuMHyuQ2LaQIoaaokIMP9Yd7/Q=' 'sha256-wtO1Wo7Jua305wdF0kRW/TNBYpCMzIAxalhJi5q0qJg='; style-src 'self' 'unsafe-hashes' https://fonts.googleapis.com 'sha256-/FWcheSXSLcRW6lqqYEs16hg5ZOym56UNpe5gPhNRG0=' 'sha256-028WArkUGGpgGY65EtwZstrehino6h4ANrXgJDmQjls=' 'sha256-A7D04FWoGcqK3wKyW7tufpMoQ66H2Ry0w+euf/Ho9JA=' 'sha256-MiPgDldwa8URbFCSFpd0KvoCGs8+6zbAqQuQl1hGjU4=' 'sha256-Or1RpAgmr+u//W5XapygDzKlSYHaWDcNalJJtTkRG7Y=' 'sha256-SHKNGOb3r9HDdFSWxCg/iERmv6GzdC1QTJBbsoQZGXM='; font-src https://fonts.gstatic.com; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; connect-src 'self' https://cloudflareinsights.com; script-src 'self' https://static.cloudflareinsights.com 'unsafe-hashes' 'sha256-4Syl2W1sH6ZxXuNfLnAHxlDmPG4ZInyKQAT2vKKbhIw=' 'sha256-I5qar4Nj0iqsBqAuuRfXF4aa812oejnZPSBnedalOwM=' 'sha256-QKpmY+DZ85YyP2P0lF3Ys0ckQgOkY7UDc56eG3WvI4U=' 'sha256-ZrG5gYdjcScyzCEFzqBVMduBOQI+AcIQtZqWg9iJ0eU=' 'sha256-jqxtvDkBbRAl9Hpqv68WdNOieepg8tJSYu1xIy7zT34=' 'sha256-ot8wm+smFDEBwVgKnbuMHyuQ2LaQIoaaokIMP9Yd7/Q=' 'sha256-wtO1Wo7Jua305wdF0kRW/TNBYpCMzIAxalhJi5q0qJg='; style-src 'self' 'unsafe-hashes' https://fonts.googleapis.com 'sha256-/FWcheSXSLcRW6lqqYEs16hg5ZOym56UNpe5gPhNRG0=' 'sha256-028WArkUGGpgGY65EtwZstrehino6h4ANrXgJDmQjls=' 'sha256-A7D04FWoGcqK3wKyW7tufpMoQ66H2Ry0w+euf/Ho9JA=' 'sha256-MiPgDldwa8URbFCSFpd0KvoCGs8+6zbAqQuQl1hGjU4=' 'sha256-Or1RpAgmr+u//W5XapygDzKlSYHaWDcNalJJtTkRG7Y=' 'sha256-SHKNGOb3r9HDdFSWxCg/iERmv6GzdC1QTJBbsoQZGXM='; font-src https://fonts.gstatic.com; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
