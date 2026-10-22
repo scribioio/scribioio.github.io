@@ -6,6 +6,31 @@
         <description>Scribio updates</description>
         <language>en</language>
         <item>
+            <title>Version 1.0.0-beta.23</title>
+            <pubDate>Thu, 22 Oct 2026 01:42:37 +0000</pubDate>
+            <sparkle:version>1792632643</sparkle:version>
+            <sparkle:shortVersionString>1.0.0-beta.23</sparkle:shortVersionString>
+            <description><![CDATA[<h2>1.0.0-beta.23</h2>
+<p>Calls on Bluetooth earbuds are transcribed in full again, the speech an earlier beta lost is recovered by itself, and the live view, speaker naming and summaries have all been reworked.</p>
+<h3>Calls and recording</h3>
+<ul><li><strong>The other side of a call is no longer dropped on Bluetooth earbuds.</strong> With earbuds in call mode, most of what the other people said could go missing from the transcript. That is fixed, and Scribio now checks during every meeting that the call is reaching the transcript.</li><li><strong>Speech that was lost is recovered by itself.</strong> Scribio now saves the call as its own file beside your microphone. For meetings where the other side's speech went missing, Scribio transcribes it again from that file in the background — a few meetings per launch, never during a recording — and rebuilds the summary. On a call with just one other person, the recovered lines are given that person's name.</li><li><strong>No more phantom recordings from Teams.</strong> A Teams survey or chat window left open after a call, or a Teams window already open when Scribio starts, no longer starts a recording on its own. A real call is still picked up as soon as it starts.</li><li><strong>Stop means stop.</strong> After you press Stop, Scribio waits for the meeting to really end before it offers to record that meeting again. A meeting in one app ending no longer stops a recording in another, and back-to-back meetings across apps are offered.</li><li><strong>Earbuds in call mode record,</strong> and the "can't hear your microphone" warning no longer appears when the call is coming through.</li><li><strong>The microphone follows your Mac's current input</strong> mid-meeting, and switching headsets no longer ends the meeting.</li></ul>
+<h3>The live view</h3>
+<ul><li><strong>A small bar is the default during a recording.</strong> Expand it to a compact view with the transcript, people, notes and Ask; Expand again opens the main window's Meetings page, and "Back to live view" in the sidebar returns you to it.</li><li><strong>The live windows are normal windows.</strong> They no longer float over everything; click Scribio in the Dock to bring them back.</li><li><strong>A new menu bar icon</strong> that follows your menu bar's colours.</li><li><strong>Notes:</strong> the note bar can be moved and resized, Screenshot picks a window or a region you drag (double-click for the whole screen), and the AI reads a screenshot's most useful text.</li></ul>
+<h3>Speaker names</h3>
+<ul><li><strong>Name a voice once, and it carries over.</strong> One panel names every voice in a meeting, with a clip to listen to; a name you give reaches the same voice in other meetings on a strong match. Every change can be undone.</li><li><strong>Move a single line</strong> to the right person; a line you set by hand is never changed automatically.</li><li><strong>Unknown voices keep one number across meetings,</strong> and a guessed name is shown as a suggestion, never as a name.</li><li><strong>Names match everywhere</strong> — the transcript, the People pane and the live view use the same name, and the People pane updates as soon as you rename someone.</li><li><strong>Action items belong to the person who said them,</strong> and your own voice is no longer learned under someone else's name. Past meetings are corrected automatically.</li><li><strong>A whole room on one microphone</strong> is split into its voices first; if it cannot be split, those lines are left unnamed rather than given to you.</li><li><strong>Faces:</strong> the People pane shows a speaker's face where Scribio has one, and face crops are sharper. Face recognition is asked for once, never during a call, and turning it on in Settings counts as your consent.</li><li><strong>The speaker picker</strong> is wider, picks the top match with Return, and lists the people you named most recently.</li></ul>
+<h3>Summaries</h3>
+<ul><li><strong>You can see what the summary is doing</strong> — "Reading topic 4 of 9", "Writing the summary" — instead of a bar that looks stuck, and it finishes faster.</li><li><strong>Summaries read your pinned notes and screenshots,</strong> and quotes credit the right speaker.</li></ul>
+<h3>Also</h3>
+<ul><li><strong>Click a transcript line to play it.</strong> Playback now includes both sides of the call.</li><li><strong>The graph</strong> opens fitted, zooms and pans, and has a small map that jumps where you click.</li><li><strong>Text size in Settings scales every font.</strong></li><li><strong>Backups are kept compressed,</strong> with one weekly backup kept for 60 days.</li><li><strong>An update can no longer corrupt or strand your library,</strong> and an interrupted model download resumes cleanly.</li><li><strong>Topics is gone from the sidebar</strong> (it was the same as Graph), and the "All systems healthy" line is gone from the bottom of the window.</li></ul>]]></description>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <sparkle:channel>beta</sparkle:channel>
+            <enclosure
+                url="https://github.com/scribioio/scribioio.github.io/releases/download/v1.0.0-beta.23/Scribio-1.0.0-beta.23.dmg"
+                length="329803660"
+                type="application/octet-stream"
+                sparkle:edSignature="zONZeN9PAl7kOX3PgumYYhXf3HXqdeKm8rHX+cG25qqlSb4KdPeRaH0iLixQVfc8jI4oCCnfTqnFNErNLhfdCA==" />
+        </item>
+        <item>
             <title>Version 1.0.0-beta.22</title>
             <pubDate>Fri, 16 Oct 2026 17:02:26 +0000</pubDate>
             <sparkle:version>1792169556</sparkle:version>
