@@ -11,3 +11,33 @@
 
 /.well-known/apple-app-site-association
   Content-Type: application/json
+
+# Security headers for every path (Cloudflare audit 2026-10-22, L3).
+#
+# Content-Security-Policy — built from an inventory of what the pages load:
+#   - script-src: the six OAuth callback pages' inline <script> blocks and their
+#     one inline handler (onclick="window.close()"), by SHA-256 hash; no
+#     'unsafe-inline'. 'unsafe-hashes' admits ONLY the hashed handler.
+#   - style-src: every page's inline <style> block and the two style=""
+#     attributes, by hash; the privacy page's Google Fonts stylesheet.
+#   - font-src: Google Fonts' font files (privacy page).
+#   - img-src 'self' data: (no page loads an image today; the logo is inline SVG).
+#   - default-src 'self' covers connect/frame/media; object-src, base-uri and
+#     form-action are 'none' (no plugins, no <base>, no forms).
+#   - frame-ancestors 'none': no one may frame these pages.
+# The scribio:// deep link the callbacks navigate to is not governed by CSP.
+# Cloudflare JavaScript Detections (audit M5) injects an inline script that a
+# static header cannot hash (it changes per response); with JSD on, the browser
+# refuses it and logs one CSP error — nothing on the page depends on it.
+# AFTER EDITING ANY INLINE <script>/<style>, style="" or on*="" in a page, run
+#   python3 tools/csp-hashes.py
+# A changed block no longer matches its hash and the browser silently drops it.
+#
+# These add no Content-Type and no Cache-Control, so /appcast.xml keeps
+# Pages' application/xml and its revalidating cache unchanged.
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-hashes' 'sha256-4Syl2W1sH6ZxXuNfLnAHxlDmPG4ZInyKQAT2vKKbhIw=' 'sha256-I5qar4Nj0iqsBqAuuRfXF4aa812oejnZPSBnedalOwM=' 'sha256-QKpmY+DZ85YyP2P0lF3Ys0ckQgOkY7UDc56eG3WvI4U=' 'sha256-ZrG5gYdjcScyzCEFzqBVMduBOQI+AcIQtZqWg9iJ0eU=' 'sha256-jqxtvDkBbRAl9Hpqv68WdNOieepg8tJSYu1xIy7zT34=' 'sha256-ot8wm+smFDEBwVgKnbuMHyuQ2LaQIoaaokIMP9Yd7/Q=' 'sha256-wtO1Wo7Jua305wdF0kRW/TNBYpCMzIAxalhJi5q0qJg='; style-src 'self' 'unsafe-hashes' https://fonts.googleapis.com 'sha256-/FWcheSXSLcRW6lqqYEs16hg5ZOym56UNpe5gPhNRG0=' 'sha256-028WArkUGGpgGY65EtwZstrehino6h4ANrXgJDmQjls=' 'sha256-A7D04FWoGcqK3wKyW7tufpMoQ66H2Ry0w+euf/Ho9JA=' 'sha256-MiPgDldwa8URbFCSFpd0KvoCGs8+6zbAqQuQl1hGjU4=' 'sha256-Or1RpAgmr+u//W5XapygDzKlSYHaWDcNalJJtTkRG7Y=' 'sha256-SHKNGOb3r9HDdFSWxCg/iERmv6GzdC1QTJBbsoQZGXM='; font-src https://fonts.gstatic.com; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
