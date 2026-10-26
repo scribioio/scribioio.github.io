@@ -6,6 +6,35 @@
         <description>Scribio updates</description>
         <language>en</language>
         <item>
+            <title>Version 1.0.0-beta.25</title>
+            <pubDate>Mon, 26 Oct 2026 19:44:54 +0000</pubDate>
+            <sparkle:version>1793043101</sparkle:version>
+            <sparkle:shortVersionString>1.0.0-beta.25</sparkle:shortVersionString>
+            <description><![CDATA[<h2>1.0.0-beta.25</h2>
+<p>Teach Scribio from anywhere it writes, an industry glossary for your field, a cleaner AI settings page, and a Scribio that stays in the Dock and keeps its memory in check.</p>
+<h3>Teach Scribio</h3>
+<ul><li><strong>Teach from any line Scribio wrote.</strong> Point at a summary line, decision, next step, task, moment, title or AI answer and choose ✦ Teach. Say what's wrong in your own words — a spelling, a person, "this was decided" — and Scribio shows exactly what it will change. Nothing changes until you press Apply, and every change can be undone.</li><li><strong>Teach from the transcript.</strong> Select a word such as "click" and tell Scribio it should be "Qlik". The first answer appears instantly; Scribio's AI adds to it in the background.</li><li><strong>A teach bar on the Summary</strong> takes several corrections at once.</li><li><strong>Taught words reach everything Scribio writes</strong> — summaries, the meeting record, titles, moments and Scribio AI — and past summaries that used the old spelling update in the background. An ordinary word (like "click" the verb) is left alone where it's meant.</li></ul>
+<h3>Glossary</h3>
+<ul><li><strong>A new Glossary page in Settings</strong> for names, products and acronyms, with search, filters, how often each term appears, and import and export.</li><li><strong>Acronyms are spelled out</strong> the first time in a summary, for example "Project Management Office (PMO)".</li><li><strong>Industry glossaries</strong> for Technology &amp; Communications, Financial Services, Insurance, Health Care, US Public Sector and Logistics, reviewed term by term. They're off until you turn one on; Scribio suggests one when your meetings use its terms. Your own terms always win, and you can hide any term.</li><li><strong>Terms defined out loud are learned.</strong> When you say "ARR, which is our annual recurring revenue", Scribio remembers it. Definitions from other people apply to that meeting first and everywhere once someone else confirms them.</li><li><strong>A wrong meaning is easy to fix:</strong> select the term in the transcript and choose Not here, Never this meaning, or It means….</li></ul>
+<h3>AI settings</h3>
+<ul><li><strong>A calmer AI page:</strong> your model in plain words, a writing style, and a few facts about you and your work. Technical transcription controls moved to Diagnostics.</li><li><strong>"Spellings to confirm" is gone</strong>, and so is the background scan behind it.</li></ul>
+<h3>Meetings and people</h3>
+<ul><li><strong>Select several meetings</strong> by hovering a row and ticking it, then add them to a project, tag them, refresh their details or delete them.</li><li><strong>Tags you choose</strong> on any meeting, alongside the automatic ones.</li><li><strong>The People pane</strong> shows who spoke how much, with a card for each person: what they owe you and what they talked about.</li><li><strong>A speaker card</strong> opens beside a speaker's name with a larger picture, their details, See more and Teach.</li><li><strong>Search lands on the word</strong> you searched, highlighted in the transcript; ⌘G and ⇧⌘G step through the matches.</li></ul>
+<h3>Windows and the menu bar</h3>
+<ul><li><strong>Scribio stays in the Dock.</strong> Yellow minimizes like any Mac app; red quits.</li><li><strong>Only the small recording pill floats</strong> above other apps, including full-screen meetings. Hover it to minimize it to the Dock.</li><li><strong>The menu bar icon follows your menu bar's colours</strong>, with a blue dot while recording and no text.</li><li><strong>"Scribio" is capitalised</strong> everywhere you see it.</li></ul>
+<h3>Recording and summaries</h3>
+<ul><li><strong>Back-to-back calls are split</strong> into separate meetings when a new call is confirmed.</li><li><strong>Chat apps sitting idle no longer start a countdown.</strong></li><li><strong>Playback on speakers no longer echoes</strong> the other side of the call.</li><li><strong>Microphone restarts are steadier</strong> when devices change.</li><li><strong>Names you settle reach the summary, tasks and moments</strong>, and old "Unknown voice" labels are rewritten.</li></ul>
+<h3>Also</h3>
+<ul><li><strong>Memory stays in check.</strong> Scribio keeps one copy of its AI model, unloads it when idle, and waits with automatic AI work when your Mac is short on memory.</li></ul>]]></description>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <sparkle:channel>beta</sparkle:channel>
+            <enclosure
+                url="https://github.com/scribioio/scribioio.github.io/releases/download/v1.0.0-beta.25/Scribio-1.0.0-beta.25.dmg"
+                length="327080284"
+                type="application/octet-stream"
+                sparkle:edSignature="9k4sywlgnPqY5X3AewGlNF6P+ocDv77/KdCDibqoF/TRzeDost2G8hbzyLKDBBNBhDDT55xeC/2vWyMRKvzkCw==" />
+        </item>
+        <item>
             <title>Version 1.0.0-beta.24</title>
             <pubDate>Thu, 22 Oct 2026 11:40:56 +0000</pubDate>
             <sparkle:version>1792668582</sparkle:version>
