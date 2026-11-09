@@ -2,21 +2,21 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["SAFFCT6GS7.app.scribio"],
+        "appIDs": ["SAFFCT6GS7.ai.sonalio"],
         "components": [
           {
             "/": "/zoom/oauth-callback*",
-            "comment": "Zoom Marketplace OAuth redirect — Scribio intercepts via Universal Link before browser navigates"
+            "comment": "Zoom Marketplace OAuth redirect — Sonalio intercepts via Universal Link before browser navigates"
           },
           {
             "/": "/linkedin/oauth-callback*",
-            "comment": "LinkedIn OIDC OAuth redirect — LinkedIn portal refuses custom URL schemes so we use AASA-bound HTTPS; Scribio intercepts via Universal Link before browser navigates"
+            "comment": "LinkedIn OIDC OAuth redirect — LinkedIn portal refuses custom URL schemes so we use AASA-bound HTTPS; Sonalio intercepts via Universal Link before browser navigates"
           }
         ]
       }
     ]
   },
   "webcredentials": {
-    "apps": ["SAFFCT6GS7.app.scribio"]
+    "apps": ["SAFFCT6GS7.ai.sonalio", "SAFFCT6GS7.app.scribio"]
   }
 }

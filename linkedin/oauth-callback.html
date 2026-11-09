@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Returning to Scribio…</title>
+  <title>Returning to the app…</title>
   <style>
     :root {
       color-scheme: light dark;
@@ -61,8 +61,19 @@
     <button onclick="window.close()">Close tab</button>
   </div>
   <script>
-    // Scribio-LINKEDIN-SIMPLE-1 — bounce the OAuth callback to the
-    // scribio:// custom URL scheme so non-AASA paths (Chrome,
+    // officina-c1w2s: the app names itself in front of the OAuth state
+    // (<scheme>.<token>), so the code goes back to the app that asked while
+    // Scribio and Sonalio are both installed. A state with no known prefix
+    // (every build before this one) goes to the scheme those builds registered.
+    var KNOWN_APPS = { sonalio: 'Sonalio', scribio: 'Scribio' };
+    var LEGACY_SCHEME = 'scribio';
+    function returnScheme(state) {
+      var dot = (state || '').indexOf('.');
+      var named = dot > 0 ? state.slice(0, dot) : '';
+      return Object.prototype.hasOwnProperty.call(KNOWN_APPS, named) ? named : LEGACY_SCHEME;
+    }
+    // Scribio-LINKEDIN-SIMPLE-1 — bounce the OAuth callback to the asking app's
+    // custom URL scheme so non-AASA paths (Chrome,
     // Universal-Link-cache misses, post-OAuth flows where Safari
     // didn't intercept) still reach the app instead of leaving a
     // stranded blank tab. Mirrors the Zoom bounce (Scribio-vzi).
@@ -76,8 +87,10 @@
       var params = new URLSearchParams(window.location.search);
       var code = params.get('code');
       var state = params.get('state');
+      var scheme = returnScheme(state);
+      document.getElementById('status').textContent = 'Returning you to ' + KNOWN_APPS[scheme] + '…';
       if (code) {
-        var deeplink = 'scribio://oauth/linkedin?code=' + encodeURIComponent(code) +
+        var deeplink = scheme + '://oauth/linkedin?code=' + encodeURIComponent(code) +
                        '&state=' + encodeURIComponent(state || '');
         // Fire after a tick so the page can paint the spinner first.
         setTimeout(function () { window.location.href = deeplink; }, 100);
