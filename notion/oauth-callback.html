@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Returning to Scribio…</title>
+  <title>Returning to the app…</title>
   <style>
     :root {
       color-scheme: light dark;
@@ -60,21 +60,34 @@
     <button onclick="window.close()">Close tab</button>
   </div>
   <script>
+    // officina-c1w2s: the app names itself in front of the OAuth state
+    // (<scheme>.<token>), so the code goes back to the app that asked while
+    // Scribio and Sonalio are both installed. A state with no known prefix
+    // (every build before this one) goes to the scheme those builds registered.
+    var KNOWN_APPS = { sonalio: 'Sonalio', scribio: 'Scribio' };
+    var LEGACY_SCHEME = 'scribio';
+    function returnScheme(state) {
+      var dot = (state || '').indexOf('.');
+      var named = dot > 0 ? state.slice(0, dot) : '';
+      return Object.prototype.hasOwnProperty.call(KNOWN_APPS, named) ? named : LEGACY_SCHEME;
+    }
     (function () {
       var params = new URLSearchParams(window.location.search);
       var code = params.get('code');
       var state = params.get('state');
+      var scheme = returnScheme(state);
+      document.getElementById('status').textContent = 'Returning you to ' + KNOWN_APPS[scheme] + '…';
       var oauthError = params.get('error');
       if (code) {
-        var deeplink = 'scribio://oauth/notion?code=' + encodeURIComponent(code) +
+        var deeplink = scheme + '://oauth/notion?code=' + encodeURIComponent(code) +
                        '&state=' + encodeURIComponent(state || '');
         setTimeout(function () { window.location.href = deeplink; }, 100);
       } else if (oauthError) {
-        var deeplink = 'scribio://oauth/notion?error=' + encodeURIComponent(oauthError) +
+        var deeplink = scheme + '://oauth/notion?error=' + encodeURIComponent(oauthError) +
                        '&state=' + encodeURIComponent(state || '');
         setTimeout(function () { window.location.href = deeplink; }, 100);
         document.getElementById('status').textContent =
-          'Notion reported an error during sign-in. Returning to Scribio…';
+          'Notion reported an error during sign-in. Returning to ' + KNOWN_APPS[scheme] + '…';
       } else {
         document.getElementById('status').textContent =
           'No authorization code received. You can close this tab.';
