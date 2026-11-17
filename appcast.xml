@@ -6,6 +6,35 @@
         <description>Scribio updates</description>
         <language>en</language>
         <item>
+            <title>Version 1.0.0-beta.26</title>
+            <pubDate>Tue, 17 Nov 2026 02:21:33 +0000</pubDate>
+            <sparkle:version>1794881235</sparkle:version>
+            <sparkle:shortVersionString>1.0.0-beta.26</sparkle:shortVersionString>
+            <description><![CDATA[<h2>1.0.0-beta.26</h2>
+<p>Scribio is now Sonalio. This update installs Sonalio, brings your meetings across, and adds a new look, better speaker naming, screenshot markup and a lot more.</p>
+<h3>Scribio is now Sonalio</h3>
+<ul><li><strong>Same app, new name.</strong> Click Install, enter your Mac's password once when macOS asks, and Sonalio opens in place of Scribio.</li><li><strong>Your meetings come with you.</strong> On its first launch Sonalio copies your library, checks the copy, and only then opens it. Your recordings, transcripts, speakers, summaries, tasks, projects, tags, settings and backups are all there.</li><li><strong>Scribio moves to the Trash, not away for good.</strong> Your Scribio folder in Application Support is left as it was, so nothing is lost if you ever need it.</li><li><strong>macOS asks for permissions again, once.</strong> To macOS, Sonalio is a new app, so it does not inherit Scribio's permissions. On first launch, Sonalio's setup takes you through them: the microphone, Screen &amp; System Audio Recording (followed by one restart of Sonalio), Accessibility, your calendar if you connected one, and two questions about screen and system audio access. Choose Allow for each one, and recording works as before.</li></ul>
+<h3>A new look</h3>
+<ul><li><strong>Liquid Glass</strong> across the window, the sidebar and the recording pill, sized for 14-inch and 16-inch screens.</li><li><strong>Meetings, Tasks and Intelligence pages are redesigned.</strong></li><li><strong>The recording pill tucks into a small floating tab</strong> while you work.</li><li><strong>A mini-player at the bottom of the window</strong> shows which meeting is playing and stops it from anywhere.</li></ul>
+<h3>Naming speakers</h3>
+<ul><li><strong>Fix a name from the transcript line itself.</strong> Click a speaker's name for a menu: these lines, everywhere, or play.</li><li><strong>Cut out part of a line</strong> and give it to the person who really said it; drag across several lines of a turn at once. Undo puts it back.</li><li><strong>"Which of these is ‹name›?"</strong> asks with a tick box per voice when voices disagree.</li><li><strong>A correction un-teaches the wrong person,</strong> so the same mistake stops coming back.</li><li><strong>A list of lines to check</strong> shows lines on your record that may belong to someone else, with a bar on each affected meeting.</li><li><strong>Browser meetings</strong> in Chrome, Edge and other browsers read names from the meeting window, and a Teams call in a browser is no longer labelled Google Meet.</li><li><strong>One person, one card:</strong> same-named people across meetings are joined when it is clear, and asked about when it isn't. Every join can be undone in Recent Merges.</li><li><strong>Faces:</strong> your pick becomes the person's photo, only clear front-facing faces are kept, and Remove photo is on each person's card. A face Sonalio can't match yet waits until the meeting ends instead of starting a new person, each meeting lists the faces it saw, and Sonalio asks when two faces may be the same person.</li></ul>
+<h3>Screenshots and notes</h3>
+<ul><li><strong>Mark up a screenshot:</strong> crop, highlight, shapes, text you type straight into a box, and a Blur tool with Light, Medium and Strong.</li><li><strong>Notes and screenshots appear under their transcript lines,</strong> and a screenshot opens over the window to zoom and pan.</li></ul>
+<h3>Listening back</h3>
+<ul><li><strong>Click a transcript line and it plays that line,</strong> and playback carries on.</li><li><strong>No echo when you replay a meeting</strong> recorded on speakers.</li><li><strong>Transcript search</strong> highlights every match, shows "1 of N", and steps through them.</li></ul>
+<h3>Recording</h3>
+<ul><li><strong>One Save audio button</strong> in every live view; Pause and Stop are in the pill.</li><li><strong>The meeting mix level is set automatically.</strong></li><li><strong>A recording stops itself safely</strong> before memory use could stall your Mac.</li></ul>
+<h3>Also</h3>
+<ul><li><strong>Upgrade older meetings</strong> in Settings is clearer, shows each step as it runs, and says whether it can be undone.</li><li><strong>Sonalio AI</strong> keeps its waveform on screen until the answer is written.</li></ul>]]></description>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <sparkle:channel>beta</sparkle:channel>
+            <enclosure
+                url="https://github.com/scribioio/scribioio.github.io/releases/download/v1.0.0-beta.26/Sonalio-1.0.0-beta.26-from-scribio.pkg"
+                length="317228579"
+                type="application/octet-stream"
+                sparkle:edSignature="BNNqXnJZm6KLNbjivdKHwaeC9ryDgeXBRbFIg4XpmtaPhlDVYD3WBA3nPvTl5YBCQd82R25CQrb9jgpMap0KDw==" />
+        </item>
+        <item>
             <title>Version 1.0.0-beta.25</title>
             <pubDate>Mon, 26 Oct 2026 19:44:54 +0000</pubDate>
             <sparkle:version>1793043101</sparkle:version>
