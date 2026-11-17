@@ -6,6 +6,26 @@
         <description>Scribio updates</description>
         <language>en</language>
         <item>
+            <title>Version 1.0.0-beta.27</title>
+            <pubDate>Tue, 17 Nov 2026 05:16:20 +0000</pubDate>
+            <sparkle:version>1794891800</sparkle:version>
+            <sparkle:shortVersionString>1.0.0-beta.27</sparkle:shortVersionString>
+            <description><![CDATA[<h2>1.0.0-beta.27</h2>
+<p>The recording pill is easier to move around: grab it anywhere, drop it where you want it, and it stays on top while you work, on one screen or several.</p>
+<h3>The recording pill</h3>
+<ul><li><strong>Grab it anywhere.</strong> Any part of the pill that isn't the note field or a button moves it, and its edges no longer resize it by accident.</li><li><strong>It stays where you drop it.</strong> Let go of the pill anywhere on a screen and it stays right there, at its full size. Expand and collapse bring it back to the same spot.</li><li><strong>It snaps only near a screen's outer edge.</strong> Drop it close to the outside edge of your screens and it snaps there and tucks into the small tab when you move away. The border between two monitors isn't an edge, so you can drag the pill straight across it.</li><li><strong>The tab and the pill stay on top</strong> of your other windows, from the moment a recording starts, so they're always easy to find.</li><li><strong>Expand opens on the same screen.</strong> The live window opens on the monitor the pill is on, not where it was last left, and fits fully on smaller screens such as a 14-inch MacBook Pro.</li></ul>
+<h3>For testers still on Scribio</h3>
+<ul><li><strong>Update to beta.26 first.</strong> If you haven't updated since Scribio beta.25, Check for Updates offers beta.26, which installs Sonalio and brings your meetings across. Sonalio then offers this update.</li></ul>]]></description>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <sparkle:minimumUpdateVersion>1794881235</sparkle:minimumUpdateVersion>
+            <sparkle:channel>beta</sparkle:channel>
+            <enclosure
+                url="https://github.com/scribioio/scribioio.github.io/releases/download/v1.0.0-beta.27/Sonalio-1.0.0-beta.27.dmg"
+                length="322269002"
+                type="application/octet-stream"
+                sparkle:edSignature="I7XQo94k0fVkh5W7X/w+ciQ62ZfY7MD06OS5yFio6p9A+p8CGoZ5QshvITDFpDrHab5JBTylUagJO1zhSFhuAQ==" />
+        </item>
+        <item>
             <title>Version 1.0.0-beta.26</title>
             <pubDate>Tue, 17 Nov 2026 02:21:33 +0000</pubDate>
             <sparkle:version>1794881235</sparkle:version>
